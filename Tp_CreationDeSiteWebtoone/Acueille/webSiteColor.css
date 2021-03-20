@@ -1,5 +1,6 @@
 h1{
     background: red;
+
 }
 tr.conctate{
     background: red;
@@ -12,13 +13,17 @@ body{
 }
 table{
     background: gray;
+
 }
 table.tablemenu{
     background: red;
 }
-
-table.info{
-    width: auto;
-    height: 500px;
-    background: red;
+a.imageFrozen{
+    height: 1500px;
+    width: 500px;
+}
+.arrondi{
+    margin-left: 450px;
+    margin-right: 450px ;
+    border-radius: 50px;
 }

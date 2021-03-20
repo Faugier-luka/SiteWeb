@@ -4,6 +4,39 @@
     <meta charset="UTF-8">
     <title>Lien</title>
     <link href="webSiteColor.css" rel="stylesheet" type="text/css" >
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: "Helvetica", sans-serif;
+        }
+        img {
+            max-width: 1000px;
+        }
+
+
+        .menu label {
+            cursor: pointer;
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            background: #fff;
+            border-radius: 100px;
+            margin: 0 0.2em 1em;
+        }
+        .menu label:hover,.menu label:focus {
+            background: #1c87c9;
+        }
+        [id^="slide"]:checked + .slide {
+            left: 0;
+            z-index: 100;
+            transition: left 0.65s ease-out;
+        }
+
+
+    </style>
 </head>
 <body>
 <center>
@@ -12,13 +45,14 @@
             <form action="webSite.html" id="form" method="get" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction">
                 <meta itemprop="target" content="text/css"/>
 
-
+                <a href="webSite.html"><= </a>
                 <img src="../logo/dessin%20texte%20de%20demon2.png"width="50" height="50">
-                <a href="webSite.html">___________________Accueil___________________</a>
-                <a href="projets.html" itemprop="url"><span itemprop="name">Projets___________________</span></a>
-                <a href="lien.html" itemprop="url"><span itemprop="name">Nos LN___________________</span></a>
-                <a href="projets.html" itemprop="url"><span itemprop="name">Bibliothèque___________________</span></a>
+                <a href="webSite.html">_________Accueil_________</a>
+                <a href="projets.html" itemprop="url"><span itemprop="name">Projets_________</span></a>
+                <a href="lien.html" itemprop="url"><span itemprop="name">Nos LN_________</span></a>
+                <a href="projets.html" itemprop="url"><span itemprop="name">Bibliothèque_________</span></a>
                 <a href="contacter.html" itemprop="url"><span itemprop="name">Nous contacter</span></a>
+
 
 
                 <input id="s" itemprop="query-input" class="search-live" type="text" placeholder="Rechercher..." name="s"/>
@@ -28,7 +62,7 @@
         </div>
     </h1>
 
-    <table id="info" >
+    <table id="info" style="position: center;"  border="16" >
         <tr >
             <td >
        <h2 ><d> <i> Pour le moment aucun light novel na été éditer</i></d></h2>
