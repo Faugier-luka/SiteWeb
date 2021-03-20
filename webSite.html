@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WebDessin</title>
+    <link rel="icon" href="../logo/dessin%20texte%20de%20demon2.png">
+    <balice id="ancres"></balice>
+    <link href="webSiteColor.css" rel="stylesheet" type="text/css" >
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: "Helvetica", sans-serif;
+        }
+        img {
+            max-width: 1000px;
+        }
+        .slider-container {
+            height: 1000px;
+            width: 1000px;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+        .menu {
+            position: absolute;
+            left: 0;
+            z-index: 900;
+            width: 1000px;
+            bottom: 0;
+        }
+        .menu label {
+            cursor: pointer;
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            background: #fff;
+            border-radius: 100px;
+            margin: 0 0.2em 1em;
+        }
+        .menu label:hover,.menu label:focus {
+            background: #1c87c9;
+        }
+        .slide {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 100%;
+            z-index: 10;
+            padding: 8em 1em 0;
+            background-size: cover;
+            background-position: 50% 50%;
+            transition: left 0s 0.75s;
+        }
+        [id^="slide"]:checked + .slide {
+            left: 0;
+            z-index: 100;
+            transition: left 0.65s ease-out;
+        }
+        .slide-1 {
+            background-image: url("../image/paris.jpg");
+        }
+        .slide-2 {
+            background-image: url("../image/rome.jpg");
+        }
+        .slide-3 {
+              background-image: url("../WebtooneRac/episode1/episode 1 case 1.jpg");
+          }
+
+    </style>
+</head>
+<body>
+
+<center>
+    <h1 id="Menu">
+        <div class="searchx minmb">
+            <form action="webSite.html" id="form" method="get" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction">
+                <meta itemprop="target" content="text/css"/>
+
+
+                <img src="../logo/dessin%20texte%20de%20demon2.png"width="50" height="50">
+                <a href="webSite.html">___________________Accueil___________________</a>
+                <a href="projets.html" itemprop="url"><span itemprop="name">Projets___________________</span></a>
+                <a href="lien.html" itemprop="url"><span itemprop="name">Nos LN___________________</span></a>
+                <a href="projets.html" itemprop="url"><span itemprop="name">Bibliothèque___________________</span></a>
+                <a href="contacter.html" itemprop="url"><span itemprop="name">Nous contacter</span></a>
+
+
+                <input id="s" itemprop="query-input" class="search-live" type="text" placeholder="Rechercher..." name="s"/>
+                <button type="submit" id="submit"><i class="fas fa-search" aria-hidden="true"></i></button>
+                <div class="srcmob srccls"><i class="fas fa-times-circle"></i></div>
+            </form>
+        </div>
+    </h1>
+
+</br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="slider-container">
+        <div class="menu">
+            <label for="slide-dot-1"></label>
+            <label for="slide-dot-2"></label>
+           <a href="webSite.html"> <label for="slide-dot-3"></label></a>
+
+        </div>
+        <input id="slide-dot-1" type="radio" name="slides" checked>
+        <div class="slide slide-1"></div>
+        <input id="slide-dot-2" type="radio" name="slides">
+        <div class="slide slide-2"></div>
+       <a href="webtoon/webtoonAcueillemMeni.html"><input id="slide-dot-3" type="radio" name="slides">
+        <div class="slide slide-3"></div></a>
+    </div>
+
+
+
+
+
+    <table title="webtoone" >
+        <tr id="tablemenu">
+            <td>
+                <a href="webtoon/webtoonAcueillemMeni.html" title="Meni">
+              <CENTER>Meni</CENTER></a>
+            </td>
+
+            <td> <a href="webtoon/webtoonAcueillemMeni.html" title="Meni"/>
+                <center>Athenes</center>
+            </td>
+            <td> <a href="webtoon/webtoonAcueillemMeni.html" title="Meni"/>
+                <center>copenhage</center>
+            </td>
+            <td> <a href="webtoon/webtoonAcueillemMeni.html" title="Meni"/>
+                <center>lisbonne</center>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="webtoon/webtoonAcueillemMeni.html" title="Meni"> <img src="../WebtooneRac/episode1/episode%201%20case%201.jpg" width="150" height="150"></a>
+            </td>
+
+            <TD>
+                <a href="https://www.touteleurope.eu/recherche.html?q=athenes"><img src="../image/Athenes.jpg" width="150" height="100" title="athenes"></a>
+            </TD><TD>
+            <a href="https://www.touteleurope.eu/recherche.html?q=copenhage"> <img src="../image/copenhague.jpg"width="150" height="100" title="copenhage"></a>
+        </TD><TD>
+            <a  href="https://www.touteleurope.eu/recherche.html?q=lisbonne"> <img src="../image/Lisbonne.jpg"width="150" height="100" title="lisbonne"> </a>
+        </TD>
+
+
+        </tr>
+    </table>
+</center>
+
+</body>
+</html>
