@@ -1,0 +1,24 @@
+h1{
+    background: red;
+}
+tr.conctate{
+    background: red;
+}
+table.conctate{
+    background: #1c87c9;
+}
+body{
+    background: #a7a9a8;
+}
+table{
+    background: gray;
+}
+table.tablemenu{
+    background: red;
+}
+
+table.info{
+    width: auto;
+    height: 500px;
+    background: red;
+}
