@@ -23,13 +23,13 @@ a.imageFrozen{
     width: 500px;
 }
 .arrondi{
-    margin-left: 450px;
-    margin-right: 450px ;
+    margin-left: 15%;
+    margin-right: 15%;
     border-radius: 50px;
 }
 .arrondi2{
-    margin-right: 1300px;
-    margin-left: 1300px;
+    margin-right: 45%;
+    margin-left: 45%;
     border-radius: 50px ;
 }
 .tableauWeb{
