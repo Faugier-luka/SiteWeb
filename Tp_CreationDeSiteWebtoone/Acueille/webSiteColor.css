@@ -6,7 +6,8 @@ tr.conctate{
     background: red;
 }
 table.conctate{
-    background: #1c87c9;
+    border-radius: 35px;
+    margin-top: 350px;
 }
 body{
     background: #a7a9a8;
@@ -38,4 +39,15 @@ a.imageFrozen{
     border-radius: 50px;
     border: white;
 
+}
+.info{
+    margin-top: 350px;
+
+}
+.conct{
+    border-radius: 15px;
+    text-align: center;
+}
+.bordeurImage{
+    border-radius: 15px;
 }
