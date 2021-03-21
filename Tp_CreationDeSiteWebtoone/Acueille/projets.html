@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Projets</title>
-    <link rel="icon" href="../logo/dessin%20texte%20de%20demon2.png">
+    <link rel="icon" href="../logo/Logo3.png">
+
     <link href="webSiteColor.css" rel="stylesheet" type="text/css" >
     <style>
         html, body {
@@ -36,8 +37,83 @@
             transition: left 0.65s ease-out;
         }
 
-
+        * {box-sizing: border-box;}
+        .img-zoom-conatiner {
+            position: relative;
+        }
+        .img-zoom-lens {
+            position: absolute;
+            border: 1px solid #d4d4d4;
+            /*mettez la taille de la lentille:*/
+            width: 50px;
+            height: 40px;
+        }
+        .img-zoom-result {
+            border: 1px solid #d4d4d4;
+            /*mettez la taille du résultat div:*/
+            width: 500px;
+            height: 500px;
+            border-color: black;
+            border-radius: 15px ;
+        }
     </style>
+    <script>
+        function imageZoom(imgID, resultID) {
+            var img, lens, result, cx, cy;
+            img = document.getElementById(imgID);
+            result = document.getElementById(resultID);
+            /*créez la lentille:*/
+            lens = document.createElement("DIV");
+            lens.setAttribute("class", "img-zoom-lens");
+            /*mettez la lentille:*/
+            img.parentElement.insertBefore(lens, img);
+            /*calculez le ratio entre le résultat DIV and la lentille:*/
+            cx = result.offsetWidth / lens.offsetWidth;
+            cy = result.offsetHeight / lens.offsetHeight;
+            /*définissez les propriétés de fond pour le résultat DIV:*/
+            result.style.backgroundImage = "url('" + img.src + "')";
+            result.style.backgroundSize = (img.width * cx) + "px " + (img.height * cy) + "px";
+            /*Exécutez une fonction lorsque quelqu’un déplace le curseur sur l’image ou sur la lentille:*/
+            lens.addEventListener("mousemove", moveLens);
+            img.addEventListener("mousemove", moveLens);
+            /*et aussi pour les écrans tactiles:*/
+            lens.addEventListener("touchmove", moveLens);
+            img.addEventListener("touchmove", moveLens);
+            function moveLens(e) {
+                var pos, x, y;
+                /*empêchez toute autre action pouvant se produire pendant le déplacement sur l’image:*/
+                e.preventDefault();
+                /*obtenez les positions x et y du curseur:*/
+                pos = getCursorPos(e);
+                /*calculez la position de la lentille :*/
+                x = pos.x - (lens.offsetWidth / 2);
+                y = pos.y - (lens.offsetHeight / 2);
+                /*empêchez la lentille d’être positionnée à l’extérieur de l’image:*/
+                if (x > img.width - lens.offsetWidth) {x = img.width - lens.offsetWidth;}
+                if (x < 0) {x = 0;}
+                if (y > img.height - lens.offsetHeight) {y = img.height - lens.offsetHeight;}
+                if (y < 0) {y = 0;}
+                /*mettez la position de la lentille:*/
+                lens.style.left = x + "px";
+                lens.style.top = y + "px";
+                /*affichez ce que la lentille “voit”":*/
+                result.style.backgroundPosition = "-" + (x * cx) + "px -" + (y * cy) + "px";
+            }
+            function getCursorPos(e) {
+                var a, x = 0, y = 0;
+                e = e || window.event;
+                /*obtenez les positions x et y de l’image:*/
+                a = img.getBoundingClientRect();
+                /*calculez les coordonnées x et y du curseur par rapport à l’image:*/
+                x = e.pageX - a.left;
+                y = e.pageY - a.top;
+                /*considérez tout défilement de page:*/
+                x = x - window.pageXOffset;
+                y = y - window.pageYOffset;
+                return {x : x, y : y};
+            }
+        }
+    </script>
 </head>
 <body>
 <center>
@@ -47,7 +123,7 @@
             <meta itemprop="target" content="text/css"/>
 
             <a href="webSite.html"><= </a>  <a href="webSite.html">
-            <img src="../logo/dessin%20texte%20de%20demon2.png"width="50" height="50">
+            <img src="../logo/Logo3.png"width="50" height="50">
             _________Accueil_________</a>
             <a href="projets.html" itemprop="url"><span itemprop="name">Projets_________</span></a>
             <a href="lien.html" itemprop="url"><span itemprop="name">Nos LN_________</span></a>
@@ -63,6 +139,13 @@
 </h1></center>
 
 <center><h1 class="arrondi2" ><b><i>Projets</i></b></h1></center>
+
+
+<center class="zoomFrozen" ><a href="webtoon/webtoonAcueillemMeni.html">
+    <div id="myresult" class="img-zoom-result " title="Frozen"  style="position: absolute; margin-top: 150px; margin-left: 40%"></div></a>
+</center>
+
+
 
 <!--<table title="webtoone">
     <tr>
@@ -91,29 +174,43 @@
         </td>
     </tr>
 </table>-->
-
+<div class="img-zoom-container">
 <table class="tableauWeb">
     <tr>
-        <td>   <a href="webtoon/webtoonAcueillemMeni.html" title="Meni"> <img src="../image/Frozen/Frozen.png" width="150" height="150"></a></td>
-        <td> <a href="webtoon/webtoonAcueillemMeni.html" title="Meni">
+        <td>   <a href="webtoon/webtoonAcueillemMeni.html" title="Frozen"> <img src="../image/Frozen/Frozen.png" id="myimage" title="Frozen" width="150" height="150" alt="House" ></a></td>
+
+        <td> <a href="webtoon/webtoonAcueillemMeni.html" title="Frozen" >
             <center>Frozen</center></a> </td><td><a href="webtoon/episode.html"> <br> .épisode 1 </a>
         </td>
     </tr>
     <tr>
-        <td><a href="webtoon/episode.html" title="Meni"> <img src="../image/paris.jpg" width="150" height="150"></a></td>
-        <td> <a href="webtoon/webtoonAcueillemMeni.html" title="Meni">
+        <td><a href="webtoon/episode.html" title="Paris"> <img src="../image/paris.jpg" width="150" height="150"></a></td>
+        <td> <a href="webtoon/webtoonAcueillemMeni.html" title="Frozen">
             <center>Frozen</center></a> </td><td><a href="webtoon/episode.html"> <br> .épisode 1 </a>
     </tr>
     <tr>
-    <td><a href="webtoon/episode.html" title="Meni"> <img src="../image/rome.jpg" width="150" height="150"></a></td>
-    <td> <a href="webtoon/webtoonAcueillemMeni.html" title="Meni">
+    <td><a href="webtoon/episode.html" title="Rome"> <img src="../image/rome.jpg" width="150" height="150"></a></td>
+    <td> <a href="webtoon/webtoonAcueillemMeni.html" title="Frozen">
         <center>Frozen</center></a> </td><td><a href="webtoon/episode.html"> épisode 1 </a>
-</tr>
-    <tr>
-        <td><a href="webtoon/episode.html" title="Meni"> <img src="../image/madrid.jpg" width="150" height="150"></a></td>
-        <td> <a href="webtoon/webtoonAcueillemMeni.html" title="Meni">
-            <center>Frozen</center></a> </td><td><a href="webtoon/episode.html"> <br> .épisode 1 </a>
     </tr>
+    <tr>
+        <td><a href="webtoon/episode.html" title="Madrid"> <img src="../image/madrid.jpg" width="150" height="150"></a></td>
+        <td> <a href="webtoon/webtoonAcueillemMeni.html" title="Frozen">
+            <center>Frozen</center></a> </td><td><a href="webtoon/episode.html"> <br> .épisode 1 </a>
+
+    </tr>
+
+
+
+
 </table>
+
+</div>
+<script>
+    // lancez l’effet de zoom:
+    imageZoom("myimage", "myresult");
+</script>
 </body>
 </html>
+
+
