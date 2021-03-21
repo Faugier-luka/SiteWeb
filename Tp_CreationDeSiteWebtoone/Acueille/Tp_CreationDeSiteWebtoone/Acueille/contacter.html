@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nous Contacter</title>
+    <link href="webSiteColor.css" rel="stylesheet" type="text/css" >
+    <link rel="icon" href="../logo/Logo3.png">
+
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: "Helvetica", sans-serif;
+        }
+        img {
+            max-width: 1000px;
+        }
+
+
+        .menu label {
+            cursor: pointer;
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            background: #fff;
+            border-radius: 100px;
+            margin: 0 0.2em 1em;
+        }
+        .menu label:hover,.menu label:focus {
+            background: #1c87c9;
+        }
+        [id^="slide"]:checked + .slide {
+            left: 0;
+            z-index: 100;
+            transition: left 0.65s ease-out;
+        }
+
+
+    </style>
+</head>
+<body><center>
+<h1 id="Menu"class="arrondi" >
+    <div class="searchx minmb">
+        <form action="webSite.html" id="form" method="get" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction">
+            <meta itemprop="target" content="text/css"/>
+
+            <a href="webSite.html"><= </a>  <a href="webSite.html">
+            <img src="../logo/Logo3.png"width="50" height="50">
+            _________Accueil_________</a>
+            <a href="projets.html" itemprop="url"><span itemprop="name">Projets_________</span></a>
+            <a href="lien.html" itemprop="url"><span itemprop="name">Nos LN_________</span></a>
+            <a href="projets.html" itemprop="url"><span itemprop="name">Bibliothèque_________</span></a>
+            <a href="contacter.html" itemprop="url"><span itemprop="name">Nous contacter</span></a>
+
+
+
+            <input id="s" itemprop="query-input" class="search-live" type="text" placeholder="Rechercher..." name="s"/>
+            <button type="submit" id="submit"><i class="fas fa-search" aria-hidden="true"></i></button>
+            <div class="srcmob srccls"><i class="fas fa-times-circle"></i></div>
+        </form>
+    </div>
+
+</h1></center><center><h3>
+<table id ="tablecontact" class="conctate">
+    <tr id="conctact" >
+        <td bgcolor="red" class="conct">
+            Nous Contacter
+        </td></tr>
+    <tr>
+        <td><br>
+            Si vous cherchez à nous contacter, voici nos moyens de communication :
+            <br><br>
+            <ul><li>Par mail
+                <li>Par discord</ul>
+        </td>
+    </tr>
+</table></h3></center>
+</body>
+</html>
